@@ -4,7 +4,7 @@ function onYouTubeIframeAPIReady() {
 	player = new YT.Player('video-placeholder', {
 		width: 600,
 		height: 400,
-		videoId: 'vrP-_T-h9YM',
+		videoId: 'cu811deHNPY', //FROM: https://www.youtube.com/watch?v=cu811deHNPY
 		playerVars: {
 			color: 'white'
 			//autoplay: '1'
@@ -54,12 +54,12 @@ function updateTimerDisplay(){
 		i++;
 	}
 
-	if ( t < 136.1) {
+	if ( t < 153) {
 		setTimeout(() => {
 			updateTimerDisplay();
 		}, 100);
 	}
-	
+
 }
 function pTimes(num,startT,endT,curT) {
 	var curP = document.querySelector('.p' + num);
@@ -135,4 +135,3 @@ function sTimes(num,soundStarts,curT) {
 		};
 	}
 })();
-

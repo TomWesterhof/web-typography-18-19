@@ -5,10 +5,39 @@ Show them when they receive the class 'on'
 Hide them when they receive the class 'off'
 Feel free to adjust the defaults to your needs.
 ********************************************** */
+body {
+	background-color: black;
+}
+
+main {
+	max-width: 80vw;
+	margin: auto;
+}
+
+
+iframe div.ytp-pause-overlay.ytp-scroll-min {
+	display: none;
+}
+
+#video-placeholder {
+	height: 40em;
+	width: 70em;
+}
+
+#closed-captions {
+	position: relative;
+	width: 80vw;
+}
+
+
 #closed-captions p {
 	opacity: 0;
 	transition: .05s;
 	position: absolute;
+	font-family: "Brenner Display Black";
+	color: #ffffff;
+	font-size: 2em;
+	max-width: 80vw;
 }
 #closed-captions .on {
 	opacity: 1;
@@ -22,20 +51,21 @@ Feel free to adjust the defaults to your needs.
 }
 
 /* **********************************************
-The first paragraph, with extended timing for 
+The first paragraph, with extended timing for
 	all siblings. Basically what it does is that
-	it shows the text after a delay, which 
+	it shows the text after a delay, which
 	corresponds with the time that the word is
 	spoken.
 You probably want to change the styling.
 ********************************************** */
+
 .p0 span {
 	opacity: 0;
 	font-family: brenner;
 }
 .p0.on span:first-of-type {
 	opacity: 1;
-	transition: 0s;
+	transition: 0s .1s;
 	font-weight: 200;
 }
 .p0.on span:nth-of-type(2) {
@@ -81,16 +111,29 @@ You probably want to change the styling.
 }
 .p0.on span:nth-of-type(9) {
 	opacity: 1;
-	transition: 0s 3s;
+	transition: 0s 2.2s;
 	font-family: "brenner Sans condensed";
 }
 .p0.on span:nth-of-type(10) {
 	opacity: 1;
-	transition: 0s 3.2s;
+	transition: 0s 2.4s;
 	font-family: "brenner mono";
 }
 .p0.on span:nth-of-type(11) {
 	opacity: 1;
-	transition: 0s 3.7s;
+	transition: 0s 2.6s;
 	font-family: "brenner slab";
+}
+
+
+
+
+
+.mine1 span {
+	font-size: 5vw;
+	font-family: "brenner mono";
+	font-style: normal;
+	font-weight: 600;
+	color: #F7DD72;
+	text-shadow: 3px 3px 6px #4E6766;
 }
