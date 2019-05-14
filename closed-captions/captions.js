@@ -1,4 +1,4 @@
-// All right, any of these boats look familiar to you?
+// Right, do any of these boats look familiar to you?
 captions[0] = ['1','4'];
 captions[1] = ['4','8.01'];
 captions[2] = ['8.01','11.03'];
@@ -30,7 +30,7 @@ captions[20] = ['60.41','61.51'];
 captions[21] = ['61.93','64.06'];
 captions[22] = ['64.4','65.11'];
 captions[23] = ['65.33','67.9'];
-// the one that has been fighting the whole ocean.
+// the one that's been fighting the whole ocean.
 captions[24] = ['67.9','69.66'];
 captions[25] = ['69.66','70.56'];
 captions[26] = ['70.9','71.76'];
@@ -61,4 +61,4 @@ captions[44] = ['127.85','130.07'];
 // Whaa
 captions[45] = ['131.89','133.17'];
 captions[46] = ['140.85','143.07'];
-captions[47] = ['143.07','144.67'];
+captions[47] = ['143.07','143.97'];
