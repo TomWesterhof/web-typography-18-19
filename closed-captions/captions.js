@@ -1,7 +1,7 @@
 // Right, do any of these boats look familiar to you?
 captions[0] = ['1','4'];
 captions[1] = ['4','8.01'];
-captions[2] = ['8.01','11.03'];
+captions[2] = ['8.01','12.03'];
 // Dory, wake up. Wake up. Come on!
 captions[3] = ['11.03','12.56'];
 captions[4] = ['13.26','14.04'];
@@ -19,9 +19,9 @@ captions[12] = ['40.88','41.5'];
 captions[13] = ['41.5','45.12'];
 captions[14] = ['45.12','47.28'];
 // Yeah.. yeah.. yeah...
-captions[15] = ['47.28','49.58'];
+captions[15] = ['47.28','50.58'];
 captions[16] = ['50.22','52.44'];
-captions[17] = ['56.08','58'];
+captions[17] = ['55.80','58'];
 // Fish got your tongue?
 captions[18] = ['58','59.01'];
 captions[19] = ['59.1','60.41'];
@@ -47,18 +47,19 @@ captions[33] = ['97.46','100.99'];
 captions[34] = ['101.44','102.04'];
 captions[35] = ['101.74','105.69'];
 // Yeah right.
-captions[36] = ['105.88','106.97'];
+captions[36] = ['105.58','106.97'];
 captions[37] = ['106.97','111.47'];
 captions[38] = ['111.47','112.87'];
 // Whaaaa
-captions[39] = ['113.85','114.27'];
+captions[39] = ['113.85','114.67'];
 captions[40] = ['114.15','116.17'];
 captions[41] = ['116.85','119.17'];
 // Whoooeeee
-captions[42] = ['124.25','125.57'];
+captions[42] = ['124.25','126.57'];
 captions[43] = ['125.65','126.57'];
 captions[44] = ['127.85','130.07'];
 // Whaa
-captions[45] = ['131.89','133.17'];
+captions[45] = ['131.89','132.97'];
 captions[46] = ['140.85','143.07'];
 captions[47] = ['143.07','143.97'];
+captions[48] = ['143.07','143.97'];
