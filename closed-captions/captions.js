@@ -29,7 +29,7 @@ captions[20] = ['60.41','61.51'];
 // I got to find my son Nemo!
 captions[21] = ['61.93','64.06'];
 captions[22] = ['64.4','65.11'];
-captions[23] = ['65.33','67.9'];
+captions[23] = ['65.33','69.66'];
 // the one that's been fighting the whole ocean.
 captions[24] = ['67.9','69.66'];
 captions[25] = ['69.66','70.56'];

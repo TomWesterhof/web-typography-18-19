@@ -6,8 +6,8 @@ function onYouTubeIframeAPIReady() {
 		height: 400,
 		videoId: 'cu811deHNPY', //FROM: https://www.youtube.com/watch?v=cu811deHNPY
 		playerVars: {
-			color: 'white'
-			//autoplay: '1'
+			color: 'white',
+			playsinline: '1'
 			//playlist: 'taJ60kskkns,FG0fTKAqZ5g'
 		},
 		events: {

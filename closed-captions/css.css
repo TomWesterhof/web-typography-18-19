@@ -1,19 +1,12 @@
-/* **********************************************
-Basic mechanics
-Hide all paragraphs by default
-Show them when they receive the class 'on'
-Hide them when they receive the class 'off'
-Feel free to adjust the defaults to your needs.
-********************************************** */
 body {
 	background-color: black;
 }
 
 p {
   --nemo: #f7733a;
-	--nemots: #4E6766;
+	--nemots: #9f3c19;
 	--dory: #3d68ff;
-	--doryts: #4E6766;
+	--doryts: #0e217d;
 	--pelican: #d7d8bf;
 	--pelicants: #d75c4f;
 	--mine: #ffa342;
@@ -25,26 +18,17 @@ main {
 	margin: auto;
 }
 
-iframe div.ytp-pause-overlay.ytp-scroll-min {
-	display: none;
-}
-
-/* #video-placeholder {
-	height: 40em;
-	width: 70em;
-} */
-
 #closed-captions {
 	position: relative;
 	width: 80vw;
 }
 
-
 p {
 	opacity: 0;
 	transition: .05s;
 	position: absolute;
-	font-family: "Brenner Display Black";
+	font-family: sans-serif;
+	font-weight: 300;
 	color: #ffffff;
 	font-size: 2.2vw;
 	max-width: 80vw;
@@ -62,14 +46,7 @@ iframe {
 	height: 40vw;
 }
 
-/* **********************************************
-The first paragraph, with extended timing for
-	all siblings. Basically what it does is that
-	it shows the text after a delay, which
-	corresponds with the time that the word is
-	spoken.
-You probably want to change the styling.
-********************************************** */
+
 
 .p0 {
 	transform: translateX(26vw);
@@ -77,7 +54,6 @@ You probably want to change the styling.
 
 .p0 span {
 	opacity: 0;
-	font-family: brenner;
 	font-size: 2.2vw;
 	color: var(--dory);
 	text-shadow: 3px 3px 6px var(--doryts);
@@ -93,7 +69,7 @@ You probably want to change the styling.
 .p0.on span:nth-of-type(3) {
 	opacity: 1;
 	transition: 0s .5s;
-	font-weight: 800;
+	font-weight: 600;
 }
 .p0.on span:nth-of-type(4) {
 	opacity: 1;
@@ -129,7 +105,6 @@ You probably want to change the styling.
 }
 
 .p1 {
-	font-family: brenner;
 	color: var(--nemo);
 	text-shadow: 3px 3px 6px var(--nemots);
 	margin-left: 4.5vw;
@@ -158,7 +133,6 @@ You probably want to change the styling.
 }
 
 .p2 {
-	font-family: brenner;
 	color: var(--dory);
 	text-shadow: 3px 3px 6px var(--doryts);
 	margin-left: 4.5vw;
@@ -234,7 +208,6 @@ You probably want to change the styling.
 
 
 .p3 {
-	font-family: brenner;
 	color: var(--nemo);
 	text-shadow: 3px 3px 6px var(--nemots);
 	margin-left: 10.5vw;
@@ -262,7 +235,6 @@ You probably want to change the styling.
 
 
 .p4 {
-	font-family: brenner;
 	color: var(--dory);
 	text-shadow: 3px 3px 6px var(--doryts);
 	margin-left: 40.5vw;
@@ -291,9 +263,9 @@ You probably want to change the styling.
     transform: translate3d(4px, 0, 0);
   }
 }
+/* FROM: https://css-tricks.com/snippets/css/shake-css-keyframe-animation/ */
 
 .p5 {
-	font-family: brenner;
 	color: var(--nemo);
 	text-shadow: 3px 3px 6px var(--nemots);
 	margin-left: 15.5vw;
@@ -304,7 +276,6 @@ You probably want to change the styling.
 }
 
 .p6 {
-	font-family: brenner;
 	color: var(--nemo);
 	text-shadow: 3px 3px 6px var(--nemots);
 	margin-left: 17.5vw;
@@ -319,12 +290,34 @@ You probably want to change the styling.
 }
 
 .p7 {
-	font-family: brenner;
 	color: var(--nemo);
 	text-shadow: 3px 3px 6px var(--nemots);
 	margin-left: 19.5vw;
 	font-size: 4vw;
 	text-transform: uppercase;
+}
+
+.p7::after {
+	content: "WHAAAAAA";
+	text-transform: uppercase;
+	font-size: 3vw;
+	margin-left: -15.5vw;
+	margin-top: 2vw;
+	position: absolute;
+	color: var(--dory);
+	text-shadow: 3px 3px 6px var(--doryts);
+	transform: rotate(-4deg);
+}
+
+.p7.on::after {
+	animation: p7bewegenafter 1s linear;
+}
+
+@keyframes p7bewegenafter {
+	0%   {opacity: 0;}
+	39%  {transform: scale(.7) rotate(-4deg);opacity: 0;}
+	40%  {transform: scale(.7) rotate(-4deg);opacity: 1;}
+	100% {transform: scale(1.7) rotate(-4deg);opacity: 1;}
 }
 
 .p7.on {
@@ -352,7 +345,6 @@ You probably want to change the styling.
 }
 
 .p8 {
-	font-family: brenner;
 	color: var(--nemo);
 	text-shadow: 3px 3px 6px var(--nemots);
 	margin-left: 15.5vw;
@@ -365,18 +357,57 @@ You probably want to change the styling.
 	animation: p4bewegen .6s linear infinite;
 }
 
+.p8::after {
+	content: "WHAAAAAA";
+	text-transform: uppercase;
+	font-size: 3vw;
+	margin-left: -10.5vw;
+	margin-top: 4vw;
+	position: absolute;
+	color: var(--dory);
+	text-shadow: 3px 3px 6px var(--doryts);
+	transform: rotate(-4deg);
+}
+
+.p8.on::after {
+	animation: p8bewegenafter .6s linear infinite, p8bewegenafterrr 3s linear;
+}
+
+@keyframes p8bewegenafter {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0) rotate(-4deg);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0) rotate(-4deg);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0) rotate(-4deg);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0) rotate(-4deg);
+  }
+}
+
+@keyframes p8bewegenafterrr {
+	0%   {opacity: 0;}
+	21%  {opacity: 0;}
+	22%  {opacity: 1;}
+	100% {opacity: 1;}
+}
+
 .p9 {
-	font-family: brenner;
 	color: var(--nemo);
 	text-shadow: 3px 3px 6px var(--nemots);
-	margin-left: 10.5vw;
+	margin-left: 20.5vw;
 	font-size: 5vw;
 	margin-top: 2vw;
 	text-transform: uppercase;
 }
 
 .p10 {
-	font-family: brenner;
 	color: var(--nemo);
 	text-shadow: 3px 3px 6px var(--nemots);
 	margin-left: 10.5vw;
@@ -388,76 +419,71 @@ You probably want to change the styling.
 }
 
 body.sound1 {
-	animation: ddkokhalzen 16s linear;
+	animation: kokhalzen 30s linear;
 }
 
 @keyframes kokhalzen {
-  0% {
-    background-color: rgba(0,0,0,1);
-  }
-	2% {
-    background-color: rgba(255,0,0,.5);
-		transform: scale(1.01);
-  }
-	6% {
-    background-color: rgba(0,0,0,1);
-		transform: scale(1);
-  }
-	10% {
-    background-color: rgba(0,0,0,1);
-		transform: scale(1);
-  }
-	12% {
-    background-color: rgba(255,0,0,.5);
-		transform: scale(1.01);
-  }
-	15% {
-    background-color: rgba(0,0,0,1);
-		transform: scale(1);
-  }
-	17% {
-    background-color: rgba(255,0,0,.5);
-		transform: scale(1.01);
-  }
-	20% {
-    background-color: rgba(0,0,0,1);
-		transform: scale(1);
-  }
-	22% {
-    background-color: rgba(255,0,0,.5);
-		transform: scale(1.01);
-  }
-	24% {
-    background-color: rgba(0,0,0,1);
-		transform: scale(1);
-  }
-	26% {
-    background-color: rgba(255,0,0,.5);
-		transform: scale(1.01);
-  }
-	30% {
-    background-color: rgba(0,0,0,1);
-		transform: scale(1);
-  }
-100% {
-    transform: scale(1);
-  }
+	0%   {background-color: #000000}
+	1%   {background-color: #005E00}
+	3%   {background-color: #000000}
+	4%   {background-color: #000000}
+	5%   {background-color: #005E00}
+	7%   {background-color: #000000}
+	8%   {background-color: #003F00}
+
+	10%   {background-color: #000000}
+	11%   {background-color: #003F00}
+
+	13%   {background-color: #000000}
+	14%   {background-color: #005E00}
+	16%   {background-color: #000000}
+	17%   {background-color: #003F00}
+	19%   {background-color: #000000}
+	20%   {background-color: #003F00}
+	22%   {background-color: #000000}
+	23%   {background-color: #005E00}
+	25%   {background-color: #000000}
+
+	41%   {background-color: #000000}
+	42%   {background-color: #003F00}
+	44%   {background-color: #000000}
+	45%   {background-color: #003F00}
+	47%   {background-color: #000000}
+	48%   {background-color: #003F00}
+	50%   {background-color: #000000}
+	51%   {background-color: #003F00}
+	53%   {background-color: #000000}
+
+
+	74%   {background-color: #000000}
+	75%   {background-color: #005E00}
+	77%   {background-color: #000000}
+	78%   {background-color: #003F00}
+	80%   {background-color: #000000}
+	81%   {background-color: #005E00}
+	83%   {background-color: #000000}
+	84%   {background-color: #003F00}
+	86%   {background-color: #000000}
+	87%   {background-color: #005E00}
+	89%   {background-color: #000000}
+
+	94%   {background-color: #000000}
+	95%   {background-color: #005E00}
+	97%   {background-color: #000000}
+
+	100%   {background-color: #000000}
 }
 
-/* ----------------------- PELICANEN ONDER ONSJE ----------------------- */
-
 .p11 {
-	font-family: brenner;
 	color: var(--pelican);
 	text-shadow: 3px 3px 6px var(--pelicants);
-	margin-left: 10.5vw;
+	margin-left: 14.5vw;
 }
 
 .p12 {
-	font-family: brenner;
 	color: var(--pelican);
 	text-shadow: 3px 3px 6px var(--pelicants);
-	margin-left: 44.5vw;
+	margin-left: 50.5vw;
 	font-size: 1.8vw;
 }
 
@@ -482,14 +508,12 @@ body.sound1 {
 }
 
 .p13 {
-	font-family: brenner;
 	color: var(--pelican);
 	text-shadow: 3px 3px 6px var(--pelicants);
 	margin-left: 5.5vw;
 }
 
 .p14 {
-	font-family: brenner;
 	color: var(--pelican);
 	text-shadow: 3px 3px 6px var(--pelicants);
 	margin-left: 48.5vw;
@@ -497,7 +521,6 @@ body.sound1 {
 }
 
 .p15 {
-	font-family: brenner;
 	color: var(--pelican);
 	text-shadow: 3px 3px 6px var(--pelicants);
 	margin-left: 8.5vw;
@@ -539,7 +562,7 @@ body.sound1 {
 	transform: translate(23.6vw, 3vw);
 	animation: yeah1 1s ease-in-out;
 	animation-delay: .8s;
-	animation-iteration-count: 2;
+	animation-iteration-count: 1;
 }
 
 .p15.on span:nth-of-type(4) {
@@ -585,14 +608,12 @@ body.sound1 {
 
 
 .p16 {
-	font-family: brenner;
 	color: var(--pelican);
 	text-shadow: 3px 3px 6px var(--pelicants);
 	margin-left: 40.5vw;
 }
 
 .p17 {
-	font-family: brenner;
 	color: var(--pelican);
 	text-shadow: 3px 3px 6px var(--pelicants);
 	margin-left: 46.5vw;
@@ -639,7 +660,6 @@ body.sound1 {
 }
 
 .p18 {
-	font-family: brenner;
 	color: var(--pelican);
 	text-shadow: 3px 3px 6px var(--pelicants);
 	margin-left: 43.3vw;
@@ -647,7 +667,6 @@ body.sound1 {
 
 
 .p19 {
-	font-family: brenner;
 	color: var(--dory);
 	text-shadow: 3px 3px 6px var(--nemots);
 	margin-left: 12.5vw;
@@ -655,6 +674,10 @@ body.sound1 {
 	font-size: 5vw;
 	text-transform: uppercase;
 	margin-top: 1vw;
+	transform: rotate(4deg);
+}
+.p19.on {
+	animation: p39bewegen .6s linear infinite;
 }
 
 .p19::after {
@@ -664,14 +687,16 @@ body.sound1 {
 	display: block;
 	margin-left: 5vw;
 	animation-direction: alternate;
+	transform: rotate(-10deg);
+	margin-top: -2vw;
 }
 
-.p19.on {
-	animation: p4bewegen .6s linear infinite;
+.p19.on::after {
+	animation: p40bewegen .6s linear infinite;
 }
+
 
 .p20 {
-	font-family: brenner;
 	color: var(--pelican);
 	text-shadow: 3px 3px 6px var(--pelicants);
 	margin-left: 43.3vw;
@@ -679,14 +704,12 @@ body.sound1 {
 }
 
 .p21 {
-	font-family: brenner;
 	color: var(--nemo);
 	text-shadow: 3px 3px 6px var(--nemots);
 	margin-left: 35.5vw;
 }
 
-.p22.on {
-	font-family: brenner;
+.p22 {
 	color: var(--pelican);
 	text-shadow: 3px 3px 6px var(--pelicants);
 	margin-left: 35.5vw;
@@ -703,7 +726,6 @@ body.sound1 {
 }
 
 .p23 {
-	font-family: brenner;
 	color: var(--pelican);
 	text-shadow: 3px 3px 6px var(--pelicants);
 	margin-left: 4.5vw;
@@ -728,13 +750,13 @@ body.sound1 {
 .p23.on span:nth-of-type(4),
 .p23.on span:nth-of-type(5),
 .p23.on span:nth-of-type(6) {
-	animation: p23nemo .2s ease-in-out;
+	animation: p23nemo .1s ease-in-out;
 	animation-fill-mode: forwards;
 	animation-delay: .7s;
 }
 
 .p23.on span:nth-of-type(n+7) {
-	animation: p23nemo .2s ease-in-out;
+	animation: p23nemo .1s ease-in-out;
 	animation-fill-mode: forwards;
 	animation-delay: 1.4s;
 }
@@ -745,32 +767,53 @@ body.sound1 {
 }
 
 .p24 {
-	font-family: brenner;
 	color: var(--pelican);
 	text-shadow: 3px 3px 6px var(--pelicants);
 	margin-left: 4.5vw;
+	margin-top: 5vw;
 }
 
 .p25 {
-	font-family: brenner;
 	color: var(--pelican);
 	text-shadow: 3px 3px 6px var(--pelicants);
 	margin-left: 29.5vw;
 }
 
 .p26 {
-	font-family: brenner;
 	color: var(--pelican);
 	text-shadow: 3px 3px 6px var(--pelicants);
 	margin-left: 35.5vw;
 }
 
 .p27 {
-	font-family: brenner;
 	color: var(--pelican);
 	text-shadow: 3px 3px 6px var(--pelicants);
 	margin-left: 29.5vw;
 	font-size: 3vw;
+}
+
+.p27::before {
+	content: "Ough";
+	color: var(--pelican);
+	text-shadow: 3px 3px 6px var(--pelicants);
+	margin-left: -9.5vw;
+	font-size: 2vw;
+	text-transform: uppercase;
+	position: absolute;
+	transform: rotate(-7deg);
+}
+
+.p27.on::before {
+	animation: p27before 2s linear;
+	animation-fill-mode: forwards;
+}
+
+@keyframes p27before {
+	0%     {transform: rotate(-7deg);opacity: 0;}
+	39%    {transform: rotate(-7deg) translate(-10vw, 0vw);opacity: 0;}
+	40%    {transform: rotate(-7deg) translate(-10vw, 0vw);opacity: 1;}
+	55%    {transform: rotate(-7deg) translate(-18vw, -12vw);opacity: 0;}
+	100%   {transform: rotate(-7deg) translate(-18vw, -12vw);opacity: 0;}
 }
 
 .p27 span {
@@ -798,7 +841,6 @@ body.sound1 {
 }
 
 .p28 {
-	font-family: brenner;
 	color: var(--nemo);
 	text-shadow: 3px 3px 6px var(--nemots);
 	margin-left: 29.5vw;
@@ -836,7 +878,6 @@ body.sound1 {
 }
 
 .p29 {
-	font-family: brenner;
 	color: var(--pelican);
 	text-shadow: 3px 3px 6px var(--pelicants);
 	margin-left: 19.5vw;
@@ -858,6 +899,18 @@ body.sound1 {
 	transition: none;
 }
 
+body.sound2 {
+	animation: bgcolorminebegin 2s ease-in;
+	animation-delay: 2.2s;
+}
+
+@keyframes bgcolorminebegin {
+	0%   {background-color: #000000}
+	90%   {background-color: #7F0006}
+	100%   {background-color: #000000}
+}
+
+
 @keyframes flatsh {
   0%    {transform: scale(1.2) rotateX(0deg) skewX(0deg);opacity: 1;}
   7%   {transform: scale(1.2) rotateX(65deg) skewX(-20deg);opacity: 1;}
@@ -873,7 +926,7 @@ body.sound1 {
 
 .mine1 span {
 	font-size: 6vw;
-	font-family: "brenner mono";
+	font-family: sans-serif;
 	font-style: normal;
 	font-weight: 600;
 	color: var(--mine);
@@ -882,7 +935,6 @@ body.sound1 {
 }
 
 .p31 {
-	font-family: brenner;
 	color: var(--pelican);
 	text-shadow: 3px 3px 6px var(--pelicants);
 	margin-left: 24.5vw;
@@ -924,7 +976,6 @@ body.sound1 {
 }
 
 .p32 {
-	font-family: brenner;
 	color: var(--pelican);
 	text-shadow: 3px 3px 6px var(--pelicants);
 	margin-left: 25.5vw;
@@ -972,7 +1023,6 @@ body.sound1 {
 }
 
 .p33 {
-	font-family: brenner;
 	color: var(--nemo);
 	text-shadow: 3px 3px 6px var(--nemots);
 	margin-left: 45.5vw;
@@ -980,10 +1030,38 @@ body.sound1 {
 }
 
 .p33.on {
-	animation: p3d3 3.5s linear;
+	animation: p33 3.5s linear;
 }
 
+@keyframes p33 {
+  0%    {transform: scale(1)}
+	4%    {transform: scale(1.04)}
+	8%    {transform: scale(1)}
+	12%    {transform: scale(1.04)}
+	16%    {transform: scale(1)}
 
+	20%    {transform: scale(1)}
+	24%    {transform: scale(1.04)}
+	28%    {transform: scale(1)}
+
+	32%    {transform: scale(1)}
+	36%    {transform: scale(1.04)}
+	40%    {transform: scale(1)}
+
+	50%    {transform: scale(1)}
+	55%    {transform: scale(1.1)}
+	60%    {transform: scale(1)}
+	65%    {transform: scale(1.1)}
+	70%    {transform: scale(1)}
+
+	76%    {transform: scale(1)}
+	81%    {transform: scale(1.1)}
+	86%    {transform: scale(1)}
+
+	92%    {transform: scale(1)}
+	96%    {transform: scale(1.04)}
+  100%  {transform: scale(1)}
+}
 
 .p33 span {
 	opacity: 0;
@@ -992,21 +1070,9 @@ body.sound1 {
 	opacity: 1;
 	transition: 0s 0s;
 }
-.p33.on span:first-of-type {
-	animation: p33 .4s linear;
-}
 .p33.on span:nth-of-type(2) {
 	opacity: 1;
 	transition: 0s .2s;
-}
-.p33.on span:nth-of-type(2) {
-	animation: p33 .4s linear;
-	animation-delay: .2s;
-}
-@keyframes p33 {
-  0%    {transform: scale(1)}
-  40%   {transform: scale(1.2)}
-  100%  {transform: scale(1)}
 }
 .p33.on span:nth-of-type(3) {
 	opacity: 1;
@@ -1059,7 +1125,7 @@ body.sound1 {
 
 .mine2 span {
 	font-size: 6vw;
-	font-family: "brenner mono";
+	font-family: sans-serif;
 	font-style: normal;
 	font-weight: 600;
 	color: var(--mine);
@@ -1068,7 +1134,6 @@ body.sound1 {
 }
 
 .p35 {
-	font-family: brenner;
 	color: var(--pelican);
 	text-shadow: 3px 3px 6px var(--pelicants);
 	margin-left: 26.5vw;
@@ -1127,7 +1192,6 @@ body.sound1 {
 }
 
 .p36 {
-	font-family: brenner;
 	color: var(--nemo);
 	text-shadow: 3px 3px 6px var(--nemots);
 	margin-left: 56.5vw;
@@ -1155,9 +1219,7 @@ body.sound1 {
 	margin-left: 1.4vw;
 }
 
-
 .p37 {
-	font-family: brenner;
 	color: var(--pelican);
 	text-shadow: 3px 3px 6px var(--pelicants);
 	margin-left: 16.5vw;
@@ -1235,16 +1297,37 @@ body.sound1 {
 }
 
 .p38 {
-	font-family: brenner;
 	color: var(--nemo);
 	text-shadow: 3px 3px 6px var(--nemots);
 	margin-left: 27.5vw;
 	font-size: 6vw;
 	margin-top: 1vw;
+	transform: rotate(-4deg);
+}
+
+.p38.on {
+	animation: p38bewegen .6s linear infinite;
+}
+
+@keyframes p38bewegen {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0) rotate(-4deg);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0) rotate(-4deg);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0) rotate(-4deg);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0) rotate(-4deg);
+  }
 }
 
 .p39 {
-	font-family: brenner;
 	color: var(--nemo);
 	text-shadow: 3px 3px 6px var(--nemots);
 	margin-left: 15.5vw;
@@ -1275,7 +1358,6 @@ body.sound1 {
 }
 
 .p40 {
-	font-family: brenner;
 	color: var(--dory);
 	text-shadow: 3px 3px 6px var(--doryts);
 	margin-left: 25.5vw;
@@ -1308,12 +1390,11 @@ body.sound1 {
 }
 
 .p41 {
-	font-family: brenner;
 	color: var(--pelican);
 	text-shadow: 3px 3px 6px var(--pelicants);
 	margin-left: 17.5vw;
 	font-size: 3.5vw;
-	margin-top: 1vw;
+	margin-top: 2vw;
 }
 .p41 span {
 	opacity: 0;
@@ -1325,8 +1406,8 @@ body.sound1 {
 }
 
 @keyframes p41 {
-	0%     {transform:scale(1,1) translate(19.2vw, -4.2vw)}
-	100%   {transform:scale(1.5, 1) translate(15.8vw, -4.2vw)}
+	0%     {transform:scale(1,1) translate(18.9vw, -4.05vw)}
+	100%   {transform:scale(1.5, 1) translate(15.2vw, -4.05vw)}
 }
 
 .p41.on span:nth-of-type(2) {
@@ -1341,11 +1422,10 @@ body.sound1 {
 	animation: p41 2s linear;
 	animation-fill-mode: forwards;
 	animation-delay: .7s;
-	transform: translate(19.2vw, -4.2vw);
+	transform: translate(18.9vw, -4.05vw);
 }
 
 .p42 {
-	font-family: brenner;
 	color: var(--dory);
 	text-shadow: 3px 3px 6px var(--doryts);
 	margin-left: 10.5vw;
@@ -1367,7 +1447,6 @@ body.sound1 {
 }
 
 .p43 {
-	font-family: brenner;
 	color: var(--dory);
 	text-shadow: 3px 3px 6px var(--doryts);
 	margin-left: 43.5vw;
@@ -1377,7 +1456,6 @@ body.sound1 {
 }
 
 .p44 {
-	font-family: brenner;
 	color: var(--dory);
 	text-shadow: 3px 3px 6px var(--doryts);
 	margin-left: 15.5vw;
@@ -1406,20 +1484,19 @@ body.sound1 {
 
 .p44.on span:nth-of-type(4) {
 	opacity: 1;
-	transition: 0s 1.5s;
+	transition: 0s 1.45s;
 }
 
 .p44.on span:nth-of-type(5) {
 	opacity: 1;
-	transition: 0s 1.7s;
+	transition: 0s 1.65s;
 }
 .p44.on span:nth-of-type(6) {
 	opacity: 1;
-	transition: 0s 1.9s;
+	transition: 0s 1.85s;
 }
 
 .p45 {
-	font-family: brenner;
 	color: var(--nemo);
 	text-shadow: 3px 3px 6px var(--nemots);
 	margin-left: 25.5vw;
@@ -1464,9 +1541,7 @@ body.sound1 {
   }
 }
 
-
 .p46 {
-	font-family: brenner;
 	color: var(--pelican);
 	text-shadow: 3px 3px 6px var(--pelicants);
 	margin-left: 16.5vw;
@@ -1504,7 +1579,6 @@ body.sound1 {
 }
 
 .p47 {
-	font-family: brenner;
 	color: var(--nemo);
 	text-shadow: 3px 3px 6px var(--nemots);
 	margin-left: 15.5vw;
@@ -1517,7 +1591,6 @@ body.sound1 {
 	animation: p39bewegen .6s linear infinite;
 }
 .p48 {
-	font-family: brenner;
 	color: var(--dory);
 	text-shadow: 3px 3px 6px var(--doryts);
 	margin-left: 34.5vw;
@@ -1557,15 +1630,6 @@ body.sound1 {
 }
 
 
-
-
-
-
-
-
-
-
-
 .mines {
 	position: absolute;
 	top: 0;
@@ -1574,7 +1638,7 @@ body.sound1 {
 
 .mines p {
 	font-size: 5vw;
-	font-family: "brenner mono";
+	font-family: sans-serif;
 	font-style: normal;
 	font-weight: 600;
 	color: var(--mine);
@@ -1589,8 +1653,8 @@ body.sound1 {
 	display: block;
 }
 
-.sound3.sound4 .mines p {
-	display: none;
+.sound4 .mines p {
+	font-size: 1vw;
 }
 
 .mines p:nth-of-type(1) {
@@ -1604,7 +1668,6 @@ body.sound1 {
 	transform: translate(100px 10px);
 	margin: 10vw 0 0 5vw;
 	font-size: 4vw;
-
 }
 .mines p:nth-of-type(3) {
 	animation-delay: 6s;
@@ -1786,8 +1849,6 @@ body.sound1 {
 	font-size: 4vw;
 }
 
-
-
 .mines p:nth-of-type(80) {
 	animation-delay: 4s;
 	transform: translate(200px 10px);
@@ -1799,7 +1860,6 @@ body.sound1 {
 	transform: translate(100px 10px);
 	margin: 10vw 0 0 5vw;
 	font-size: 4vw;
-
 }
 .mines p:nth-of-type(78) {
 	animation-delay: 6s;
@@ -1981,6 +2041,74 @@ body.sound1 {
 	font-size: 4vw;
 }
 
+/* VAN 4VW NAAR 2VW */
+.sound4 .mines p:nth-of-type(2),
+.sound4 .mines p:nth-of-type(9),
+.sound4 .mines p:nth-of-type(14),
+.sound4 .mines p:nth-of-type(23),
+.sound4 .mines p:nth-of-type(40),
+.sound4 .mines p:nth-of-type(41),
+.sound4 .mines p:nth-of-type(58),
+.sound4 .mines p:nth-of-type(67),
+.sound4 .mines p:nth-of-type(72),
+.sound4 .mines p:nth-of-type(79) {
+	font-size: 2vw;
+}
+
+.sound5 .mines p {
+	font-size: 3vw;
+}
+
+
+/* VAN 2VW NAAR 4VW */
+.sound5 .mines p:nth-of-type(2),
+.sound5 .mines p:nth-of-type(9),
+.sound5 .mines p:nth-of-type(14),
+.sound5 .mines p:nth-of-type(23),
+.sound5 .mines p:nth-of-type(40),
+.sound5 .mines p:nth-of-type(41),
+.sound5 .mines p:nth-of-type(58),
+.sound5 .mines p:nth-of-type(67),
+.sound5 .mines p:nth-of-type(72),
+.sound5 .mines p:nth-of-type(79) {
+	font-size: 4vw;
+}
+
+.sound6 .mines {
+	animation: minesnaarlinks 2s linear;
+}
+.sound6 .mines p {
+	font-size: 4.5vw;
+}
+
+.sound7 .mines p {
+	display: none;
+}
+
+.sound8 .mines p {
+	display: block;
+}
+
+.sound8 .mines {
+	animation: mineslangzaamweg 5.5s ease-in-out;
+	animation-fill-mode: forwards;
+}
+
+@keyframes mineslangzaamweg {
+	0%    {opacity: 1;}
+	60%   {opacity: 1;}
+	100%  {opacity: 0;}
+}
+
+
+@keyframes minesnaarlinks {
+	0%    {margin-left: -75vw;}
+	60%   {margin-left: -75vw;}
+	90%   {margin-left: 92vw;}
+	100%  {margin-left: 92vw;}
+}
+
+
 @keyframes mines {
 	0%    {transform: scale(.3);opacity: 0;}
   15%   {transform: scale(1);opacity: 1;}
@@ -1988,7 +2116,118 @@ body.sound1 {
 	100% {transform: scale(1);opacity: 0;}
 }
 
-.sound2 #closed-captions .flatsh {
-	animation: flatsh 2s linear;
-	transition: none;
+
+body.sound1.sound2.sound3 {
+	animation: bgcolormine 40s linear;
+}
+
+@keyframes bgcolormine {
+	0%   {background-color: #000000}
+	1%   {background-color: #4f000a}
+	2%   {background-color: #000000}
+	3%   {background-color: #4f000a}
+	4%   {background-color: #000000}
+
+	5%   {background-color: #350007}
+	6%   {background-color: #000000}
+	7%   {background-color: #350007}
+	8%   {background-color: #000000}
+	9%   {background-color: #350007}
+	10%   {background-color: #000000}
+	11%   {background-color: #350007}
+	12%   {background-color: #000000}
+	13%   {background-color: #350007}
+	14%   {background-color: #000000}
+	15%   {background-color: #330006}
+	16%   {background-color: #000000}
+	17%   {background-color: #330006}
+	18%   {background-color: #000000}
+	19%   {background-color: #330006}
+	20%   {background-color: #000000}
+	21%   {background-color: #330006}
+	22%   {background-color: #000000}
+	23%   {background-color: #330006}
+	24%   {background-color: #000000}
+	25%   {background-color: #330006}
+	26%   {background-color: #000000}
+	27%   {background-color: #330006}
+	28%   {background-color: #000000}
+	29%   {background-color: #330006}
+	30%   {background-color: #000000}
+	31%   {background-color: #330006}
+	32%   {background-color: #000000}
+	33%   {background-color: #440006}
+	34%   {background-color: #000000}
+	35%   {background-color: #440006}
+	36%   {background-color: #000000}
+	37%   {background-color: #440006}
+	38%   {background-color: #000000}
+	39%   {background-color: #440006}
+	40%   {background-color: #000000}
+	41%   {background-color: #60000b}
+	42%   {background-color: #000000}
+	43%   {background-color: #440006}
+	44%   {background-color: #000000}
+	45%   {background-color: #60000b}
+	46%   {background-color: #000000}
+	47%   {background-color: #440006}
+	48%   {background-color: #000000}
+	49%   {background-color: #60000b}
+	50%   {background-color: #000000}
+
+	51%   {background-color: #440006}
+	52%   {background-color: #000000}
+	53%   {background-color: #60000b}
+	54%   {background-color: #000000}
+	55%   {background-color: #440006}
+	56%   {background-color: #000000}
+	57%   {background-color: #60000b}
+	58%   {background-color: #000000}
+	59%   {background-color: #440006}
+	60%   {background-color: #000000}
+	61%   {background-color: #60000b}
+	62%   {background-color: #000000}
+	63%   {background-color: #7F0006}
+	64%   {background-color: #000000}
+	65%   {background-color: #60000b}
+	66%   {background-color: #000000}
+	67%   {background-color: #7F0006}
+	68%   {background-color: #000000}
+	69%   {background-color: #60000b}
+	70%   {background-color: #000000}
+	71%   {background-color: #7F0006}
+	72%   {background-color: #000000}
+	73%   {background-color: #60000b}
+	74%   {background-color: #000000}
+	75%   {background-color: #7F0006}
+	76%   {background-color: #330006}
+	77%   {background-color: #60000b}
+	77.5%{background-color: #7F0006}
+	78%   {background-color: #330006}
+	78.5%{background-color: #7F0006}
+	79%   {background-color: #330006}
+	79.5%{background-color: #7F0006}
+	80%   {background-color: #330006}
+	80.5%{background-color: #7F0006}
+	81%   {background-color: #330006}
+	81.5%{background-color: #7F0006}
+	82%   {background-color: #60000b}
+	83%   {background-color: #330006}
+	84%   {background-color: #000000}
+	85%   {background-color: #270006}
+	86%   {background-color: #000000}
+	87%   {background-color: #270006}
+	88%   {background-color: #000000}
+	89%   {background-color: #270006}
+	90%   {background-color: #000000}
+	91%   {background-color: #1B0006}
+	92%   {background-color: #000000}
+	93%   {background-color: #1B0006}
+	94%   {background-color: #000000}
+	95%   {background-color: #110006}
+	96%   {background-color: #000000}
+	97%   {background-color: #110006}
+	98%   {background-color: #000000}
+	99%   {background-color: #110006}
+	100% 	{background-color: #000000}
 }
